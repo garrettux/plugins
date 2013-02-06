@@ -8,6 +8,7 @@ File.foreach '/etc/scalr/private.d/config.ini' do |line|
     scalr[section] = {}
   else
     key, value = line.split(/\s*=\s*/)
+    next if value.nil?
     if section.nil?
       scalr[key] = value.chomp!
     else
