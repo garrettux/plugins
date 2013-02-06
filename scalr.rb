@@ -10,9 +10,9 @@ File.foreach '/etc/scalr/private.d/config.ini' do |line|
     key, value = line.split(/\s*=\s*/)
     next if value.nil?
     if section.nil?
-      scalr[key] = value.chomp!
+      scalr[key] = value.chomp
     else
-      scalr[section][key] = value.chomp!
+      scalr[section][key] = value.chomp
     end
   end
 end
